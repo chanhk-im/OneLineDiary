@@ -24,13 +24,17 @@ public class DuserController {
 	}
 	
 	@RequestMapping(value = "/signinok", method = RequestMethod.POST)
-	public String signInOk(DuserVO vo) {
+	public String signInOk(DuserVO vo, Model model) {
 		int checkSignIn = duserService.insertDuser(vo);
 		if (checkSignIn == 0) {
 			System.out.println("회원 가입 실패...");
 		}
 		else if (checkSignIn == 2) {
 			System.out.println("id가 이미 존재합니다...");
+			model.addAttribute("msg", "이미 존재하는 id나 username입니다!");
+			model.addAttribute("url", "./login");
+			
+			return "msgpage";
 		}
 		else {
 			System.out.println("회원 가입 성공!!");
@@ -44,7 +48,7 @@ public class DuserController {
 	}
 	
 	@RequestMapping(value="/loginOK", method=RequestMethod.POST)
-	public String loginCheck(HttpSession session, DuserVO vo) {
+	public String loginCheck(HttpSession session, DuserVO vo, Model model) {
 		String returnURL = "";
 		if (session.getAttribute("login") != null) {
 			session.removeAttribute("login");
@@ -59,7 +63,10 @@ public class DuserController {
 		}
 		else {					// 로그인 실패
 			System.out.println("로그인 실패!");
-			returnURL = "redirect:/duser/login";
+			model.addAttribute("msg", "아이디나 비밀번호가 일치하지 않습니다!");
+			model.addAttribute("url", "./login");
+			
+			return "msgpage";
 		}
 		return returnURL;
 	}
