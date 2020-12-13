@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Duser">
+	<insert id="insertDuser">
+		insert into duser (userid, username, password)
+		values
+		(#{userid}, #{username}, sha1(#{password}))
+	</insert>
+	<update id="updateDuser">
+		update duser
+		set username=#{username}
+		where sid=#{sid}
+	</update>
+	<delete id="deleteDuser">
+		delete from diary where sid=#{sid}	
+	</delete>
+	<select id="getDuser" resultType="duser">
+		select userid, username from duser
+		where userid=#{userid} and password=sha1(#{password})
+	</select>
+	<select id="getDuserById" resultType="duser">
+		select userid, username from duser
+		where userid=#{userid}
+	</select>
+	<select id="getDuserByUsername" resultType="duser">
+		select userid, username from duser
+		where username=#{username}
+	</select>
+</mapper>

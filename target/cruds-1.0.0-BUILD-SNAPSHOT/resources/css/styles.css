@@ -1,0 +1,92 @@
+#top {
+	font-family: "Nanum Myeongjo", "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#contents {
+	font-family: "Nanum Myeongjo", "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#list {
+  font-family: "Nanum Myeongjo", "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#list td, #list th {
+  border: 1px dashed #999999;
+  padding: 8px;
+  text-align:center;
+}
+#list tr {
+	padding-top: 9px;
+	padding-bottom: 9px;
+}
+#list tr:nth-child(even){background-color: #f2f2f2;}
+#list tr:nth-child(odd){background-color: #fff;}
+#list tr:hover {background-color: #ddd;}
+#list th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #f0c62e;
+  color: white;
+}
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	background-color: #e6cdfa;
+}
+div {
+	display: block;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+#title {
+	text-align: center;
+}
+#top {
+	width: 100mv;
+	height: 15vh;
+	background-color: #cff1ff;
+	padding: 8px;
+}
+#user {
+	text-align: right;
+	padding: 5px;
+}
+#contents {
+	height: 70vh;
+}
+#leftbar {
+	width: 180px;
+	height: 70vh;
+	float: left;
+	text-align: center;
+	font-size: 20px;
+	background-color: white;
+}
+#innerbar {
+	padding: 10px;
+}
+#menubar {
+	border: 1px solid #d4d4d4;
+	background-color: #f1f1f1;
+	padding: 5px;
+	width: 150px;
+}
+#main {
+	margin: 0 0 0 200px;
+	padding: 10px;
+	height: 70vh;
+}
+#bottom {
+	width: 100vw;
+	height: 15vh;
+	background-color: #f7e981;
+	
+}
+#innerbottom {
+	padding: 10px;
+	text-align: right;
+	font-family: "Nanum Myeongjo", "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
